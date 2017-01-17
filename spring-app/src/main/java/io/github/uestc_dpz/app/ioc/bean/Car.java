@@ -10,7 +10,7 @@ import org.springframework.beans.factory.*;
 import javax.annotation.PostConstruct;
 
 @ToString
-class Car implements BeanFactoryAware,
+public class Car implements BeanFactoryAware,
         BeanNameAware,
         InitializingBean,
         DisposableBean  {
@@ -36,6 +36,10 @@ class Car implements BeanFactoryAware,
 
     public void myDestroy() {
         System.out.println("call my destroy in configuration");
+    }
+
+    public void display() {
+        System.out.println("Car : brand " + brand + " color " + color + "maxSpeed" + maxSpeed);
     }
 
     //~--------------------------------
